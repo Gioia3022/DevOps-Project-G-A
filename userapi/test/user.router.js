@@ -69,18 +69,15 @@ describe('User REST API', () => {
         lastname: 'Kudinov'
       }
       // Create a user
-      userController.create(user, () => {
-        // Get the user
+      userController.create(user,()=>{
+        //Get the User
         chai.request(app)
-          .get('/user/' + user.username)
-          .then((res) => {
-            chai.expect(res).to.have.status(200)
-            chai.expect(res.body.status).to.equal('success')
-            chai.expect(res).to.be.json
-            done()
-          })
-          .catch((err) => {
-             done(err)
+        .get('/user/'+user.username)
+        .then((res) => {
+          chai.expect(res).to.have.status(200);
+          chai.expect(res.body.status).to.equal("success");
+          chai.expect(res).to.be.json;
+          done();
           })
       })
     })
