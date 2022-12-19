@@ -23,10 +23,5 @@ const server = app.listen(port, (err) => {
   if (err) throw err
   console.log("Server listening the port " + port)
 })
-/*
-module.exports = app.listen(port, (err) => {
-  if (err) throw err
-  console.log("Server listening the port " + port)
-})
-*/
+
 module.exports = server
