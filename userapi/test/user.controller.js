@@ -80,9 +80,9 @@ describe('User', () => {
       // 1. First, create a user to make this unit test independent from the others
       // 2. Then, check if the result of the get method is correct
       const user = {
-        username: 'gioia3022',
-        firstname: 'Gioia',
-        lastname: 'Galiazzo'
+        username: 'sergkudinov',
+        firstname: 'Sergei',
+        lastname: 'Kudinov'
       };
       userController.get(user.username,(err,result) => {
         expect(err).to.be.not.equal(null);
