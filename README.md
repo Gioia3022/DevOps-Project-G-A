@@ -25,5 +25,5 @@ gh repo clone Gioia3022/DevOps-Project-G-A
 ### Test
 - [Test userapi](./userapi/README.md#testing)
 ## Platforms & Tools
-- [Github Acthttps://github.com/Gioia3022/DevOps-Project-G-A/actions)
+- [Github Action](https://github.com/Gioia3022/DevOps-Project-G-A/actions)
 - [Azure](https://portal.azure.com/#home)
