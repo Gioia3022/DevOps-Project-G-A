@@ -10,17 +10,33 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
+    # Define `working-directory` if you application is in a subfolder
+    defaults:
+      run:
+        working-directory: userapi
+
+       # Service containers to run with `runner-job`
+    services:
+      # Label used to access the service container
+      redis:
+        # Docker Hub image
+        image: redis
+        ports:
+          # Opens tcp port 6379 on the host and service container
+          - 6379:6379
 
     strategy:
       matrix:
-        node-version: [10.x, 12.x, 14.x, 15.x]
+        node-version: [10.x, 12.x, 14.x, 15.x, 16.x]
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v2
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+          cache-dependency-path: '**/package-lock.json'
       - run: npm ci
       - run: npm run build --if-present
       - run: npm test --if-present
