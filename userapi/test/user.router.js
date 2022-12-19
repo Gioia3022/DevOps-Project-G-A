@@ -69,7 +69,7 @@ describe('User REST API', () => {
         lastname: 'Kudinov'
       }
       // Create a user
-      /*userController.create(user,()=>{
+      userController.create(user,()=>{
         //Get the User
         chai.request(app)
         .get('/user/'+user.username)
@@ -79,7 +79,10 @@ describe('User REST API', () => {
           chai.expect(res).to.be.json;
           done();
           })
-      })*/
+          .catch((err) => {
+            throw err
+         })
+      })
     })
     
     it('can not get a user when it does not exis', (done) => {
