@@ -1,0 +1,41 @@
+name: Node.js CD
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [ main ]
+
+env:
+  AZURE_FUNCTIONAPP_NAME: 'DevOps-Project-Galiazzo-Abdelkefi'   # set this to your function app name on Azure
+  AZURE_FUNCTIONAPP_PACKAGE_PATH: './userapi'       # set this to the path to your function app project, defaults to the repository root
+  NODE_VERSION: '16.x'                      # set this to the node version to use (e.g. '8.x', '10.x', '12.x')
+      
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest 
+    environment: dev
+
+    services:
+      # Label used to access the service container
+      redis:
+        # Docker Hub image
+        image: redis
+        ports:
+          # Opens tcp port 6379 on the host and service container
+          - 6379:6379
+          
+    steps:        
+    - name: 'Checkout GitHub Action'
+      uses: actions/checkout@v3
+    - name: Setup Node ${{ env.NODE_VERSION }} Environment
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ env.NODE_VERSION }}
+    - name: 'Resolve Project Dependencies Using Npm'
+      shell: bash # For Linux, use bash
+      run: |
+        pushd './${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}'
+        npm install
+        npm run build --if-present
+        npm run test --if-present
+        popd
