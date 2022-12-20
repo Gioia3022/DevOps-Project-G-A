@@ -24,11 +24,9 @@ jobs:
         ports:
           # Opens tcp port 6379 on the host and service container
           - 6379:6379
-
     strategy:
       matrix:
         node-version: [16.x]
-
     steps:
       - uses: actions/checkout@v3
       - name: Use Node.js ${{ matrix.node-version }}
