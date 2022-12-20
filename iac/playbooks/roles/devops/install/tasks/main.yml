@@ -1,0 +1,21 @@
+---
+- name: Download nodejs bin
+  get_url:
+    url: https://raw.githubusercontent.com/tj/n/master/bin/n
+    dest: /tmp/n
+
+- name: Run n
+  command: bash n lts
+  args:
+    chdir: /tmp
+
+- name: Install n dependencies
+  npm:
+    name: "n"
+    global: yes
+    path: /tmp
+
+- name: Install app Dependencies
+  npm: 
+    path: /home/vagrant/userapi
+    ci: yes

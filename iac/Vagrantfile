@@ -1,0 +1,35 @@
+VAGRANTFILE_API_VERSION = "2"
+
+
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+
+  if Vagrant.has_plugin?("vagrant-vbguest")
+    config.vm.provider :virtualbox do |vb|
+      config.vbguest.auto_update = false
+    end
+  end
+  
+  config.vm.provider "vmware_desktop" do |vmware|
+    vmware.vmx["memsize"] = "2048"
+    vmware.vmx["numvcpus"] = "1"
+  end
+    
+  config.vm.define "server" do |server|
+    server.vm.box = "ubuntu/trusty64"
+
+    server.vm.provider "virtualbox" do |vb|
+      vb.name =  "devops.server.local"
+      vb.memory = 2048
+      vb.cpus = 1
+    end
+
+    server.vm.synced_folder "../userapi", "/home/vagrant/userapi"
+
+    server.vm.network "private_network", ip: "192.168.56.2"
+
+    server.vm.provision "ansible_local" do |ansible|
+      ansible.playbook = "playbooks/run.yml"
+    end
+
+  end
+end

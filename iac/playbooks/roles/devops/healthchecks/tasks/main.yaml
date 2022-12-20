@@ -1,0 +1,9 @@
+- name: Test Service
+  command: npm test
+  args:
+    chdir: /home/vagrant/userapi
+  register: app_health
+
+- name: Print App Health
+  debug:
+    msg: "{{ app_health.stdout }}"

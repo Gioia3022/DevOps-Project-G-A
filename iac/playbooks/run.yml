@@ -1,0 +1,19 @@
+---
+- hosts: server
+  become: true
+
+  roles:
+  - name: Redis install
+    role: redis/install
+    tags: install
+  
+  - name: App installation
+    role: devops/install
+    tags: install
+  
+  - role: devops/healthchecks
+    tags: checks
+
+  - name: Run App
+    role: devops/run
+    tags: run

@@ -1,0 +1,19 @@
+- name: Download Redis-Stable
+  get_url:
+    url: http://download.redis.io/redis-stable.tar.gz
+    dest: /tmp
+
+- name: Unzip Redis-Stable
+  unarchive:
+    src: /tmp/redis-stable.tar.gz
+    dest: /tmp
+
+- name: Make install on redis-stable
+  make:
+    chdir: /tmp/redis-stable
+    target: install
+
+- name: Run Redis Server
+  command: redis-server
+  async: 1000000000
+  poll: 0
