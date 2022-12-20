@@ -1,0 +1,6 @@
+*
+*/
+!userapi
+*.md
+node_modules
+test

@@ -1,0 +1,19 @@
+version: '3.3'
+services:
+  redis:
+    image: redis
+    ports: 
+    - "6379:6379"
+    volumes:
+    - my-vol:/data
+  web:
+    depends_on:
+    - redis
+    image: gioia3022/project_devops_g_a
+    ports:
+    - "5000:3000"
+    environment:
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+volumes:
+  my-vol:
