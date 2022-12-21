@@ -3,11 +3,11 @@
 ## Prerequisite
 
 - Virtual Machine Manager
-If you don't have any can install [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
+If none, you can install [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
 
 ## Install
 
-1. [Install Vagrant](https://www.vagrantup.com/downloads.html)
+1. Install [Vagrant](https://www.vagrantup.com/downloads.html)
 
 2. (Optional) **On Windows**, ensure that Hyper-V is disabled:
     - Open a new **PowerShell**
@@ -16,14 +16,14 @@ If you don't have any can install [VirtualBox](https://www.virtualbox.org/wiki/D
     ```sh
     Disable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V-All
     ```
-3. Clone the current Git repository and go to `iac/` folder.
+3. Access the `iac/` folder by cloning the current Git repository.
 
 ## Usage
-1. Create a virtual machine. Run the command:
+1. Establish a virtual machine and execute the following command:
 ```sh
 vagrant up
 ```
-Once command is finished tou can open in your browser the URL - http://192.168.56.2:3000/
+Once the command has executed, you may open the URL in your browser - http://192.168.56.2:3000/
 
 2. Shutdown the VM
 ```sh
@@ -36,4 +36,4 @@ vagrant destroy
 ```
 
 ## Authors
-Paul SADE & Mathis CAMARD
+GALIAZZO Gioia & ABDELKEFI Abdelaziz

@@ -26,8 +26,8 @@ gh repo clone Gioia3022/DevOps-Project-G-A
 ```
 
 - Install [redis](https://vitux.com/install-redis-on-ubuntu/#:~:text=Installing%20Redis%20on%20Ubuntu%2020.04.%201%20Step%20%23,Check%20the%20Status%20of%20the%20Redis%20Service%3A%20) and [npm](https://phoenixnap.com/kb/install-latest-node-js-and-nmp-on-ubuntu#:~:text=1%20Type%20the%20command%3A%20sudo%20apt%20update%202,apt%20install%20npm%205%20Verify%20the%20installed%20version%3A)
-- [Install Vagrant](iac/README.md#prerequisite)
-- [Install Docker](https://www.docker.com/get-started)
+- Install [Vagrant](iac/README.md#prerequisite)
+- Install [Docker](https://www.docker.com/get-started)
 
 ### Usage
 

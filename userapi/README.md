@@ -1,6 +1,6 @@
 # User API web application
 
-It is a basic NodeJS web application exposing REST API that creates and stores user parameters in [Redis database](https://redis.io/).
+It is a straightforward REST API-exposed NodeJS web application that produces and saves user parameters in a [Redis database](https://redis.io/).
 
 ## Functionality
 
@@ -9,15 +9,15 @@ It is a basic NodeJS web application exposing REST API that creates and stores u
 
 ## Installation
 
-This application is written on NodeJS and it uses Redis database.
+This application uses the Redis database and was created with NodeJS.
 
-1. [Install NodeJS](https://nodejs.org/en/download/)
+1. Install [NodeJS](https://nodejs.org/en/download/)
 
-2. [Install Redis](https://redis.io/download)
+2. Install [Redis](https://redis.io/download)
 
 3. Install application
 
-Go to the root directory of the application (where `package.json` file located) and run:
+Run the following command in the application's root directory (where the `package.json` file is located):
 
 ```
 npm install 
@@ -33,7 +33,7 @@ From the root directory of the project run:
 npm start
 ```
 
-It will start a web server available in your browser at http://localhost:3000.
+A web server will launch and be accessible in your browser at http://localhost:5000.
 
 2. Create a user
 
@@ -43,7 +43,7 @@ Send a POST (REST protocol) request using terminal:
 curl --header "Content-Type: application/json" \
   --request POST \
   --data '{"username":"sergkudinov","firstname":"sergei","lastname":"kudinov"}' \
-  http://localhost:3000/user
+  http://localhost:5000/user
 ```
 
 It will output:
@@ -64,5 +64,4 @@ npm test
 
 ## Author
 
-Sergei Kudinov   
-sergei@adaltas.com
+GALIAZZO Gioia & ABDELKEFI Abdelaziz
