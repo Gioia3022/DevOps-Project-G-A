@@ -1,3 +1,4 @@
+# npm package manager
 node_modules
 
 # Logs
@@ -104,3 +105,7 @@ dist
 
 # TernJS port file
 .tern-port
+
+#Vagrant files
+.vagrant
+iac/playbooks/n
