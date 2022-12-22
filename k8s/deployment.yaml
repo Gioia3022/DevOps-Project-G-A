@@ -1,0 +1,49 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: projet-devops-deployment
+  labels:
+    app: projet-devops
+    version: v1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: projet-devops
+  template:
+    metadata:
+      labels:
+        app: projet-devops
+    spec:
+      containers:
+        - name: projet-devops
+          image: gioia3022/project_devops_g_a
+          ports:
+            - containerPort: 3000
+          env:
+            - name: REDIS_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: projet-devops-configmap
+                  key: redis_host
+            - name: REDIS_PORT
+              valueFrom:
+                configMapKeyRef:
+                  name: projet-devops-configmap
+                  key: redis_port
+---
+apiVersion: v1
+
+kind: Service
+metadata:
+  name: projet-devops-service
+spec:
+  selector:
+    app: projet-devops
+  type: LoadBalancer
+  ports:
+    - protocol: TCP
+      port: 3000
+      targetPort: 3000
+      nodePort: 30000
+      
