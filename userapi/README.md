@@ -1,7 +1,3 @@
-# User API web application
-
-It is a straightforward REST API-exposed NodeJS web application that produces and saves user parameters in a [Redis database](https://redis.io/).
-
 ## Functionality
 
 1. Start a web server
@@ -51,8 +47,6 @@ It will output:
 ```
 {"status":"success","msg":"OK"}
 ```
-
-Another way to test your REST API is to use [Postman](https://www.postman.com/).
 
 ## Testing
 
