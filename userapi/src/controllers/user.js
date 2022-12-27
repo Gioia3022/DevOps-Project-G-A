@@ -11,30 +11,33 @@ module.exports = {
       lastname: user.lastname,
     }
     // Check if user already exists
-    db.hgetall(user.username, function(err, res) {
-      if (err) return callback(err, null)
-      if (!res) {
+    db.hgetall(user.username,(err,res) => {
+      if(err) return callback(err,null);
+      if(!res){
         // Save to DB
-        db.hmset(user.username, userObj, function(err, res) {
-          if (err) return callback(err, null)
-          callback(null, res) // Return callback
-        })
-      } else {
-        callback(new Error("User already exists"), null)
+        db.hmset(user.username, userObj, (err, res) => {
+          if (err) return callback(err, null);
+          return callback(null, res); // Return callback
+        });
       }
-    })
+      else {
+        return callback(new Error("User already exists"), null);
+      }
+    });
   },
   get: (username, callback) => {
+    // TODO create this method
     if(!username)
-      callback(new Error("Username must be provided"), null)
-      db.hgetall(username, function(err, res) {
-        if (err)
-          return callback(err, null);
-        if (res)
-          callback(null, res)
+      return callback(new Error("Wrong username parameter"), null);
+    
+      db.hgetall(username,(err,res)=>{
+        if(err) return callback(err,null);
+        if(res) 
+          callback(null,res);
         else
-          callback(new Error("User doesn't exists"), null)
-    })
+          callback(new Error("No user with username: "+username),null);
+      });
+
   },
   update: (username, modification, callback) => {
     if(!username)
@@ -45,19 +48,17 @@ module.exports = {
     if(keys.some( key => key.match("username")) && !modification.username.match(username))
       return callback(new Error("You are not allowed to modify the username"));
 
-      db.hgetall(username,function(err,res){
-      if(err) 
-        return callback(err,null);
+    db.hgetall(username,(err,res)=>{
+      if(err) return callback(err,null);
       if(!res) 
-        return callback(new Error("No user with this username"),null);
+        return callback(new Error("No user with username: "+username),null);
       else
       {
         keys.map(key => {
           res[key] = modification[key];
         });
-        db.hmset(username,res, function(err,res){
-          if(err) 
-            return callback(err,null);
+        db.hmset(username,res, (err,res)=>{
+          if(err) return callback(err,null);
           return callback(null,res);
         });
       }
@@ -67,10 +68,9 @@ module.exports = {
     if(!username)
       return callback(new Error("Wrong username parameter"), null)
     
-      db.del(username,function(err,res) {
-        if(!res) 
-          return callback(new Error("User doesn't exist"),null);
+      db.del(username,(err,res) => {
+        if(!res) return callback(new Error("User doesn't exist"),null);
         return callback(null,res);
       })
   }
-}
+};
