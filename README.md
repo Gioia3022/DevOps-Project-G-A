@@ -11,6 +11,8 @@ This project allows us to put everything we've learned since the beginning of th
 - [Kubernetes](#6-Kubernetes-)
 - [Istio and monitoring](#7-Istio-and-monitoring-)
 - [Bonus :](#8-Bonus-)
+- [Images](Screenshots)
+- [Platforms & Tools](Platforms-&-Tools)
 
 ## 1. Assignment :
 
