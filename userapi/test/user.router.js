@@ -85,7 +85,7 @@ describe('User REST API', () => {
       });
     });
 
-    it('can not get a user when it does not exist', (done) => {
+    it('impossible to get a user when it does not exist', (done) => {
       chai.request(app)
       .get('/user/invalid')
       .then((res) => {
@@ -137,7 +137,7 @@ describe('User REST API', () => {
       });
     });
 
-    it('can not update a user when it does not exist', (done) => {
+    it('impossible to update a user when it does not exist', (done) => {
       const user = {
         username: 'sergkudinov',
         firstname: 'Sergei',
@@ -157,7 +157,7 @@ describe('User REST API', () => {
       });
     });
 
-    it('can not update a username', (done) => {
+    it('impossible update a username', (done) => {
       const user = {
         username: 'sergkudinov',
         firstname: 'Sergei',
@@ -215,7 +215,7 @@ describe('User REST API', () => {
       })
     })
 
-    it("cannot delete a user that doesn't exist", (done)=>{
+    it("impossible to delete a user that doesn't exist", (done)=>{
       const user = {
         username: 'sergkudinov',
         firstname: 'Sergei',

@@ -56,8 +56,6 @@ describe('User', () => {
   describe('Get', ()=> {
     // TODO Create test for the get method
     it('get a user by username', function(done) {
-      // 1. First, create a user to make this unit test independent from the others
-      // 2. Then, check if the result of the get method is correct
       const user = {
         username: 'sergkudinov',
         firstname: 'Sergei',
@@ -77,7 +75,7 @@ describe('User', () => {
     })
 
     // TODO Create test for the get method
-    it('can not get a user when it does not exist', function(done) {
+    it('impossible to get a user when it does not exist', function(done) {
       //Lets create a user to unit test
       const user = {
         username: 'gioia3022',
@@ -100,7 +98,7 @@ describe('User', () => {
       db.flushdb();
     })
 
-    it('cannot update username',function(done) {
+    it('impossible to update username',function(done) {
       const user = {
         username: 'sergkudinov',
         firstname: 'Sergei',
@@ -137,7 +135,7 @@ describe('User', () => {
       });
     })
 
-    it("cannot update a user that doesn't exist", function(done) {
+    it("impossible to update a user that doesn't exist", function(done) {
       const user = {
         username: 'sergkudinov',
         firstname: 'Sergei',
@@ -171,7 +169,7 @@ describe('User', () => {
         });
       })
     })
-    it("cannot delete a user that doesn't exist", function(done) {
+    it("impossible to delete a user that doesn't exist", function(done) {
       const user = {
         username: 'sergkudinov',
         firstname: 'Sergei',

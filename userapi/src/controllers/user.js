@@ -35,7 +35,7 @@ module.exports = {
         if(res) 
           callback(null,res);
         else
-          callback(new Error("No user with username: "+username),null);
+          callback(new Error("No user with this username"),null);
       });
 
   },
@@ -51,7 +51,7 @@ module.exports = {
     db.hgetall(username,(err,res)=>{
       if(err) return callback(err,null);
       if(!res) 
-        return callback(new Error("No user with username: "+username),null);
+        return callback(new Error("No user with this username "),null);
       else
       {
         keys.map(key => {
