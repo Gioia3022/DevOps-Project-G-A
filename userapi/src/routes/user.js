@@ -5,7 +5,7 @@ const userRouter = express.Router()
 
 userRouter
   .post('/', (req, resp) => {
-    userController.create(req.body, (err, res) => {
+    userController.create(req.body, function(err, res) {
       let respObj
       if(err) {
         respObj = {
@@ -21,10 +21,10 @@ userRouter
       resp.status(201).json(respObj)
     })
   })
-  .get('/:username', (req, resp, next) => { // Express URL params - https://expressjs.com/en/guide/routing.html
+  .get('/:username', function(req, resp, next) { // Express URL params - https://expressjs.com/en/guide/routing.html
     // TODO Create get method API
     const username = req.params.username
-    userController.get(username, (err, res) => {
+    userController.get(username, function(err, res) {
       let respObj
       if(err) {
         respObj = {
@@ -38,6 +38,45 @@ userRouter
         msg: res
       }
       resp.status(200).json(respObj)
+    })
+  })
+  
+  .put('/:username', function(req,resp) {
+    const username = req.params.username;
+    userController.update(username,req.body, function(err,res) {
+      if(err)
+      {
+        return resp.status(400).json({
+          status: "error",
+          msg: err.message
+        })
+      }
+      else
+      {
+        return resp.status(200).json({
+          status: "success",
+          msg: res
+        })
+      }
+    })
+  })
+  .delete('/:username', function(req,resp) {
+    const username = req.params.username;
+    userController.delete(username, function(err,res) {
+      if(err)
+      {
+        return resp.status(400).json({
+          status: "error",
+          msg: err.message
+        })
+      }
+      else
+      {
+        return resp.status(200).json({
+          status: "success",
+          msg: res
+        })
+      }
     })
   })
   
