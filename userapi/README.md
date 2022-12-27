@@ -3,37 +3,28 @@
 1. Start a web server
 2. Create a user
 
-## Installation
+## Usage
 
-This application uses the Redis database and was created with NodeJS.
+#### Run 
+The following command mush be executed in the application's root directory (where the `package.json` file is located):
 
-1. Install [NodeJS](https://nodejs.org/en/download/)
-
-2. Install [Redis](https://redis.io/download)
-
-3. Install application
-
-Run the following command in the application's root directory (where the `package.json` file is located):
-
-```
+```sh
 npm install 
 ```
 
-## Usage
-
-1. Start a web server
+#### Start a web server
 
 From the root directory of the project run:
 
-```
+```sh
 npm start
 ```
 
 A web server will launch and be accessible in your browser at http://localhost:5000.
 
-2. Create a user
+#### Create a user
 
-Send a POST (REST protocol) request using terminal:
+Send a POST request using terminal:
 
 ```bash
 curl --header "Content-Type: application/json" \
@@ -44,7 +35,7 @@ curl --header "Content-Type: application/json" \
 
 It will output:
 
-```
+```sh
 {"status":"success","msg":"OK"}
 ```
 

@@ -1,33 +1,31 @@
 # Vagrant
 
-## Prerequisite
-
-- Virtual Machine Manager
-If none, you can install [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
-
-## Install
-
-Install [Vagrant](https://www.vagrantup.com/downloads.html)
-
-2. Access the `iac/` folder by cloning the current Git repository.
-
 ## Usage
 
-1. Access the `iac/` folder by cloning the current Git repository.
+#### Access the `iac/` folder
 
-2. Establish a virtual machine and execute the following command:
+Clone the current Git repository.
+
+#### Establish a virtual machine
+
+This is possible by executing the following command:
+
 ```sh
 vagrant up
 ```
 
-3. Once the command has executed, you may open the URL in your browser - http://192.168.56.2:3000/
+#### Open the URL in your browser
 
-4. Shutdown the VM
+http://192.168.56.2:3000/
+
+#### 4.4 Shutdown the VM
+
 ```sh
 vagrant halt
 ```
 
-5. Delete th VM
+#### Delete th VM
+
 ```sh
 vagrant destroy
 ```
