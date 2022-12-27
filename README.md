@@ -171,6 +171,19 @@ Then we shoud go to the following address: 127.0.0.1/9090
 
 ## 7. Bonus :
 
+We added the following features:
+
+#### User API
+
+- We made user API a CRUD API which implies that it's able to perform the CRUD operation: Create, Read, Update and Delete.
+
+- We also added many more test to our webapp
+
+- Since Redis database provides outstanding speed, scalability, is simple to use and is also open source we decided to use it instead of other databases.
+
+#### Kubernetes
+
+- We also added ConfigMap. This allows us to store data as key-value pairs therefor it can be used by Kubernetes pods as command-line arguments, environment variables, or configuration files.
 
 ## Screenshots
 
