@@ -1,8 +1,8 @@
 # DevOps Project
 
-This project allows us to put everything we've learned since the beginning of the year to use.
+With this project, we have put into practice all our knowledge acquired in the Devops course
 
-# Summury
+# Summary
 
 - [Assignment](#1-Assignment-)
 - [Run the Application](#2-Run-the-Application-)
@@ -19,7 +19,7 @@ This project allows us to put everything we've learned since the beginning of th
 
 The goal of this project is to combine all the tools used in class into a single project. It will draw attention to a CRUD application.
 The project requires building a web application using any programming language, collecting information in a database, and then testing it at various levels.
-We choose to program our web application in javaScript.
+We chose to program our web application in JavaScript.
 
 ### Link to the assignment and grading system
 
@@ -57,7 +57,7 @@ We choose to program our web application in javaScript.
     gh repo clone Gioia3022/DevOps-Project-G-A
     ```
 
-* Make you have a source-code editor
+* Install a source-code editor
 
 * Install [redis](https://vitux.com/install-redis-on-ubuntu/#:~:text=Installing%20Redis%20on%20Ubuntu%2020.04.%201%20Step%20%23,Check%20the%20Status%20of%20the%20Redis%20Service%3A%20) and [NodeJS](https://phoenixnap.com/kb/install-latest-node-js-and-nmp-on-ubuntu#:~:text=1%20Type%20the%20command%3A%20sudo%20apt%20update%202,apt%20install%20npm%205%20Verify%20the%20installed%20version%3A)
 
@@ -78,10 +78,11 @@ You can find the instructions on how to start the user API here: [Start userapi]
 If you need to test the application follow the instructions in [Test userapi](./userapi/README.md#testing).
 
 #### 3.3 CI/CD with GitHub Action as well as Azure
-Every time we pushed, GitHub Action has tested our application using the unit tests we'll cover shortly, and in case of failure, it prevented deployment. If the deployement was succesfull we then tryed to deploy the app on Azure. As presented in our report both the building and deployment were succesfull.
+For each commit&push, GitHub Action has tested our application using the unit tests we'll cover shortly, and in case of failure, it prevented deployment. If the deployement was successfull we then tried to deploy the app on Azure. 
+As presented in our report, both the building and deployment were successfull.
 
 ## 4. IaC
-The IaC (Infrastructure as Code) aspect entails virtualizing the application with a virtual machine utilizing Vagrant and Ansible in order to implement the application's numerous features.
+The IaC (Infrastructure as Code) aspect entails virtualizing the application with a virtual machine by using Vagrant and Ansible in order to implement the application's numerous features.
 
 #### 4.1 Installation
 To run the virtual machine, ensure that [Vagrant](https://www.vagrantup.com/), [Ansible](https://docs.ansible.com/ansible/latest/index.html), and [Virtualbox](https://www.virtualbox.org/wiki/Downloads) are installed.
@@ -93,11 +94,11 @@ Ansible was used during setup to supply all of our provisions, including the lan
 
 ## 5. Docker and Docker compose
 
-* In order to use [Docker](https://docs.docker.com/get-docker/) make sure you installed it.
+* In order to use [Docker](https://docs.docker.com/get-docker/) You must install it.
 
 #### 5.1 Usage
 
-In a first moment we build an image
+First, we build an image
 
 ```sh
 docker build -t gioia3022/project_devops_g_a .
@@ -109,7 +110,7 @@ Then we use
 docker run -p 5000:3000 gioia3022/project_devops_g_a
 ```
 
-Or we use docker compose that was created to make it easier to define and distribute multi-container applications.
+Or we use docker compose to make it easier to define and distribute multi-container applications.
 
 ```sh
 docker-compose up
@@ -119,7 +120,7 @@ and finally we call the server on http://localhost:5000
 
 ## 6. Kubernetes
 
-The term "Kubernetes" refers to a collection of building components that together offer methods for the deployment, upkeep, and scalability of applications depending on CPU, memory, or other configurable metrics. Due to its extensibility and low coupling, Kubernetes can handle a variety of workloads.
+The term "Kubernetes" refers to a collection of building components that together offers methods for the deployment, upkeep, and scalability of applications depending on CPU, memory, or other configurable metrics. Due to its extensibility and low coupling, Kubernetes can handle a variety of workloads.
 
 #### 6.1 Installation
 
@@ -131,7 +132,7 @@ To start Kubernetes check up the following commands : [Use Kubernetes](k8s/READM
 
 ## 7. Istio and monitoring
 
-On one hand Istio is a flexible, open source service-mesh layer that links, watches over, and protects the containers in a Kubernetes cluster. Istio only functions natively with Kubernetes as of this writing, however because to its open source nature, anybody may create extensions that allow it to function with any cluster software.
+On one hand Istio is a flexible, open source service-mesh layer that links, watches over, and protects the containers in a Kubernetes cluster. Istio only functions natively with Kubernetes as of this writing. However, Because to its open source nature, anybody may create extensions that allow it to function with any cluster software.
 
 On the other hand Prometheus is a system and service monitoring solution that is being developed by the Cloud Native Computing Foundation. It gathers metrics from configured targets at predetermined intervals, assesses rule expressions, presents the findings, and has the ability to raise alerts if a certain condition is seen to be true.
 
@@ -157,7 +158,7 @@ kubectl apply -f https://raw.githubusercontent.com/istio/istio/release-1.12/samp
 
 #### 7.4 Prometheus and/or Grafana Usage
 
-Since we were not able to install Istio it was not possible to do the monitoring the otherwise comand would have been the following:
+Since we were not able to install Istio it was not possible to do the monitoring. Otherwise command would have been the following:
 
 Either:
 
@@ -171,7 +172,7 @@ Or:
 kubectl port-forward svc/grafana -n istio-system 9090
 ```
 
-Then we shoud go to the following address: 127.0.0.1/9090
+Then we should go to the following address: 127.0.0.1/9090
 
 ## 7. Bonus
 
@@ -179,15 +180,15 @@ We added the following features:
 
 #### User API
 
-- We made user API a CRUD API which implies that it's able to perform the CRUD operation: Create, Read, Update and Delete.
+- We made user API a CRUD API which implies that it is able to perform the CRUD operation: Create, Read, Update and Delete.
 
 - We also added many more test to our webapp
 
-- Since Redis database provides outstanding speed, scalability, is simple to use and is also open source we decided to use it instead of other databases.
+- Redis database provides: outstanding speed, scalability, is simple to use and is also open source. For all these reasons, we decided to use it instead of other databases.
 
 #### Docker file
 
-- In addition to the above we also build and push a docker image on docker hub and not only on docker deskstop
+- In addition to the above, we also build and push a docker image on docker hub and not only on docker desktop
 
 #### Kubernetes
 

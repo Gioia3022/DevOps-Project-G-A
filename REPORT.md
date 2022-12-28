@@ -2,7 +2,7 @@
 
 ## Web Application
 
-We created a web application that uses a [CRUD API](/userapi/src). This allows us to create,read, upadate and delete the users.
+We created a web application that uses a [CRUD API](/userapi/src). It allows us to create, read, update and delete users.
 
 ![App Launch](/images/CI_CD/app%20launch.jpg)
 ![WebApp](/images/CI_CD/Webapp.jpg)
@@ -17,14 +17,14 @@ We also configured and deployed a CI/CD pipeline using GitHub Action and Azure.
 ![Azure HP](/images/CI_CD/azure%20home.jpg)
 ![Azure Run](/images/CI_CD/Azure_overview.jpg)
 
-We worked through the different errors and managed to deploy without fault our webapp
+We worked through the different errors and managed to deploy our webapp
 
 ![Az. Dep](/images/CI_CD/Deployment_Azure.jpg)
 ![Az. Test](/images/CI_CD/Deployment%20Azure%202.jpg)
 
 ## Vagrant
 
-We experianced no difficulties in the installation of vagrant or ansible. Moreover, the connection to redis was done without problems.
+The installation of Vagrant and Ansible was simple. Moreover, the connection to redis was done without problems.
 
 ![V.Dep](/images/Vagrant/vagrant%20deployments.png)
 ![V.Exe](/images/Vagrant/vagrant.exe%20up.png)
@@ -32,7 +32,7 @@ We experianced no difficulties in the installation of vagrant or ansible. Moreov
 
 ## Docker Image and Docker Compose
 
-We created a docker image to work with and as a bonus task we pushed it to docker hub.
+We created a docker image to work with Also, as a bonus task, we pushed it to docker hub.
 
 ![Docker Image](/images/Docker/docker%20repository.jpg)
 ![Docker Hub](/images/Docker/docker%20hub.jpg)
@@ -46,7 +46,7 @@ We also composed the file and connected it with the app.
 
 While working with Kubernetes we managed to link the persistent volume with its claim and to attach the Persistent Volume Claim to Redis.
 
-We also used Config maps to manage the app deployment and the environnement varaibles.
+We also used Config maps to manage the app deployment and the environnement variables.
 
 ![K. ConfigMaps](/images/k8s/k8s-config-maps.png)
 
