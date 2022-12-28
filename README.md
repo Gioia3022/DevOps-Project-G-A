@@ -12,7 +12,7 @@ This project allows us to put everything we've learned since the beginning of th
 - [Kubernetes](#6-Kubernetes-)
 - [Istio and monitoring](#7-Istio-and-monitoring-)
 - [Bonus](#8-Bonus-)
-- [Images](Screenshots)
+- [Images and Report](Screenshots-and-Report)
 - [Platforms & Tools](Platforms-&-Tools)
 
 ## 1. Assignment
@@ -193,9 +193,10 @@ We added the following features:
 
 - We also added ConfigMap. This allows us to store data as key-value pairs therefor it can be used by Kubernetes pods as command-line arguments, environment variables, or configuration files.
 
-## Screenshots
+## Screenshots and Report
 
 - [Images of the progress made](/images)
+- [Report](/REPORT.md)
 
 ## Platforms & Tools
 
