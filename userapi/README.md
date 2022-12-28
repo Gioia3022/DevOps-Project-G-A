@@ -9,6 +9,7 @@
 The following command mush be executed in the application's root directory (where the `package.json` file is located):
 
 ```sh
+cd userapi
 npm install 
 ```
 
