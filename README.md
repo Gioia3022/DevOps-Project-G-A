@@ -3,6 +3,7 @@
 This project allows us to put everything we've learned since the beginning of the year to use.
 
 # Summury
+
 - [Assignment](#1-Assignment-)
 - [Run the Application](#2-Run-the-Application-)
 - [CI/CD](#3-CI/CD-)
@@ -10,11 +11,11 @@ This project allows us to put everything we've learned since the beginning of th
 - [Docker and Docker compose](#5-docker-and-docker-compose-)
 - [Kubernetes](#6-Kubernetes-)
 - [Istio and monitoring](#7-Istio-and-monitoring-)
-- [Bonus :](#8-Bonus-)
+- [Bonus](#8-Bonus-)
 - [Images](Screenshots)
 - [Platforms & Tools](Platforms-&-Tools)
 
-## 1. Assignment :
+## 1. Assignment
 
 The goal of this project is to combine all the tools used in class into a single project. It will draw attention to a CRUD application.
 The project requires building a web application using any programming language, collecting information in a database, and then testing it at various levels.
@@ -39,29 +40,32 @@ We choose to program our web application in javaScript.
 | Each bonus task                                                 |   BNS     |    +1     |
 | Each penalty                                                    |   PNL     |    -1     |
 
-## 2. Run the Application :
+## 2. Run the Application
+
 #### 2.1 Installation
 
 * Clone repository
+
     ```sh
     # https
     git clone https://github.com/Gioia3022/DevOps-Project-G-A.git
-    ```
-    ```sh
+    
     # ssh
     git clone git@github.com:Gioia3022/DevOps-Project-G-A.git
-    ```
-    ```sh
+    
     # github CLI
     gh repo clone Gioia3022/DevOps-Project-G-A
     ```
 
 * Make you have a source-code editor
+
 * Install [redis](https://vitux.com/install-redis-on-ubuntu/#:~:text=Installing%20Redis%20on%20Ubuntu%2020.04.%201%20Step%20%23,Check%20the%20Status%20of%20the%20Redis%20Service%3A%20) and [NodeJS](https://phoenixnap.com/kb/install-latest-node-js-and-nmp-on-ubuntu#:~:text=1%20Type%20the%20command%3A%20sudo%20apt%20update%202,apt%20install%20npm%205%20Verify%20the%20installed%20version%3A)
+
 * Install [Vagrant](iac/README.md#prerequisite)
+
 * Install [Docker](https://www.docker.com/get-started)
 
-## 3. CI/CD :
+## 3. CI/CD
 
 #### 3.1 User API web application
 
@@ -76,7 +80,7 @@ If you need to test the application follow the instructions in [Test userapi](./
 #### 3.3 CI/CD with GitHub Action as well as Azure
 Every time we pushed, GitHub Action has tested our application using the unit tests we'll cover shortly, and in case of failure, it prevented deployment. If the deployement was succesfull we then tryed to deploy the app on Azure. As presented in our report both the building and deployment were succesfull.
 
-## 4. IaC :
+## 4. IaC
 The IaC (Infrastructure as Code) aspect entails virtualizing the application with a virtual machine utilizing Vagrant and Ansible in order to implement the application's numerous features.
 
 #### 4.1 Installation
@@ -87,7 +91,7 @@ To setup the virtual machine check up the following commands : [Use Vagrant](iac
 
 Ansible was used during setup to supply all of our provisions, including the language runtime, the database, and the application.
 
-## 5. Docker and Docker compose :
+## 5. Docker and Docker compose
 
 * In order to use [Docker](https://docs.docker.com/get-docker/) make sure you installed it.
 
@@ -113,7 +117,7 @@ docker-compose up
 
 and finally we call the server on http://localhost:5000
 
-## 6. Kubernetes :
+## 6. Kubernetes
 
 The term "Kubernetes" refers to a collection of building components that together offer methods for the deployment, upkeep, and scalability of applications depending on CPU, memory, or other configurable metrics. Due to its extensibility and low coupling, Kubernetes can handle a variety of workloads.
 
@@ -125,7 +129,7 @@ The term "Kubernetes" refers to a collection of building components that togethe
 
 To start Kubernetes check up the following commands : [Use Kubernetes](k8s/README.md#setup)
 
-## 7. Istio and monitoring :
+## 7. Istio and monitoring
 
 On one hand Istio is a flexible, open source service-mesh layer that links, watches over, and protects the containers in a Kubernetes cluster. Istio only functions natively with Kubernetes as of this writing, however because to its open source nature, anybody may create extensions that allow it to function with any cluster software.
 
@@ -169,7 +173,7 @@ kubectl port-forward svc/grafana -n istio-system 9090
 
 Then we shoud go to the following address: 127.0.0.1/9090
 
-## 7. Bonus :
+## 7. Bonus
 
 We added the following features:
 
@@ -180,6 +184,10 @@ We added the following features:
 - We also added many more test to our webapp
 
 - Since Redis database provides outstanding speed, scalability, is simple to use and is also open source we decided to use it instead of other databases.
+
+#### Docker file
+
+- In addition to the above we also build and push a docker image on docker hub and not only on docker deskstop
 
 #### Kubernetes
 
